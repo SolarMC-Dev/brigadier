@@ -31,6 +31,8 @@ java {
 
 compileJava {
     options.release = 11
+    // See Gradle-17484 for bug affecting options.javaModuleVersion
+    options.compilerArgs.addAll(['--module-version', project.version])
 }
 
 test {
