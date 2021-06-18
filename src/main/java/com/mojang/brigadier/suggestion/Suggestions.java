@@ -21,7 +21,7 @@ public class Suggestions {
 
     public Suggestions(final StringRange range, final List<Suggestion> suggestions) {
         this.range = range;
-        this.suggestions = suggestions;
+        this.suggestions = List.copyOf(suggestions); // Solar - immutable
     }
 
     public StringRange getRange() {

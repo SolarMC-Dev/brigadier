@@ -7,8 +7,8 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class StringArgumentType implements ArgumentType<String> {
     private static final StringArgumentType WORD_ARGUMENT = new StringArgumentType(StringType.SINGLE_WORD);
@@ -96,7 +96,7 @@ public class StringArgumentType implements ArgumentType<String> {
         private final Collection<String> examples;
 
         StringType(final String... examples) {
-            this.examples = Arrays.asList(examples);
+            this.examples = List.of(examples); // Solar - immutable
         }
 
         public Collection<String> getExamples() {

@@ -7,12 +7,12 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class FloatArgumentType implements ArgumentType<Float> {
     private static final FloatArgumentType ALL = new FloatArgumentType(-Float.MAX_VALUE, Float.MAX_VALUE);
-    private static final Collection<String> EXAMPLES = Arrays.asList("0", "1.2", ".5", "-1", "-.5", "-1234.56");
+    private static final Collection<String> EXAMPLES = List.of("0", "1.2", ".5", "-1", "-.5", "-1234.56"); // Solar - immutable
 
     private final float minimum;
     private final float maximum;

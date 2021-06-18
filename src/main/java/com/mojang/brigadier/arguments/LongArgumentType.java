@@ -7,12 +7,12 @@ import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 public class LongArgumentType implements ArgumentType<Long> {
     private static final LongArgumentType ALL = new LongArgumentType(Long.MIN_VALUE, Long.MAX_VALUE);
-    private static final Collection<String> EXAMPLES = Arrays.asList("0", "123", "-123");
+    private static final Collection<String> EXAMPLES = List.of("0", "123", "-123"); // Solar - immutable
 
     private final long minimum;
     private final long maximum;
