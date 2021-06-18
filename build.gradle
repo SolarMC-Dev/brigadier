@@ -4,8 +4,8 @@ plugins {
     id 'nu.studer.credentials' version '2.1'
 }
 
-group = 'com.velocitypowered'
-version = project.hasProperty('buildNumber') ? "${project.majorMinor}.${project.buildNumber}" : "${project.majorMinor}.0-SNAPSHOT"
+group = 'gg.solarmc'
+version = '1.0.19'
 
 sourceCompatibility = 11
 targetCompatibility = 11
