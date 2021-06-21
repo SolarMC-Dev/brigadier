@@ -2,10 +2,13 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'nu.studer.credentials' version '2.1'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.2'
 }
 
+scmVersion.tag.prefix = ''
+
 group = 'gg.solarmc'
-version = '1.0.20'
+project.version = scmVersion.version
 
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -66,7 +69,7 @@ publishing {
             }
 
             name = 'solar-repo'
-            def base = 'https://mvn-repo.platinum-mc.com'
+            def base = 'https://mvn-repo.solarmc.gg'
             def releasesRepoUrl = "$base/releases"
             def snapshotsRepoUrl = "$base/snapshots"
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
