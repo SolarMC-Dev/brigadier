@@ -1,7 +1,6 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'nu.studer.credentials' version '2.1'
     id 'pl.allegro.tech.build.axion-release' version '1.13.2'
 }
 
@@ -64,15 +63,12 @@ publishing {
     repositories {
         maven {
             credentials {
-                username project.credentials.solarRepoUser
-                password project.credentials.solarRepoPassword
+                username System.getenv("REPO_USER")
+                password System.getenv("REPO_PASS")
             }
 
-            name = 'solar-repo'
-            def base = 'https://mvn-repo.solarmc.gg'
-            def releasesRepoUrl = "$base/releases"
-            def snapshotsRepoUrl = "$base/snapshots"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            name = "solar-repo"
+            url = "https://maven.cloudsmith.io/solarmc/oss-lesser-gpl3"
         }
     }
 }
